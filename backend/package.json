@@ -11,5 +11,9 @@
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.18"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1",
+    "save": "^2.5.0"
   }
 }
