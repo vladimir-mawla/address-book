@@ -17,7 +17,7 @@ const option = {
 };
 
 const mongoURI = process.env.MONGODB_URI;
-mongoose.connect('mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb', option).then(function(){
+mongoose.connect('mongodb+srv://vladimirmawla:vladimirmawla@2000@vladimir-se.deqrbl1.mongodb.net/addressdb?retryWrites=true&w=majority', option).then(function(){
     //connected successfully
 }, function(err) {
     //err handle
