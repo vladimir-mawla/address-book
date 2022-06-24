@@ -27,5 +27,14 @@ app.delete("/remove_contact", async (req, res) => {
   }
 });
 
+// Get contacts API
+app.post("/get_contacts", async (req, res) => {
+    const contact = await Contact.find({ _userId: req.body });
+    try {
+      res.send(contact);
+    } catch (error) {
+      res.status(500).send(error);
+    }
+  });
 
 module.exports = app;
