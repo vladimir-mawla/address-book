@@ -1,6 +1,6 @@
-// 'use strict';
+'use strict';
 // module.exports = function(app) {
-//     var userHandlers = require('../controllers/userController.js');
+//     var userHandlers = require('../controllers/userController');
 //     // todoList Routes
 //     app.route('/tasks')
 //         .post(userHandlers.loginRequired, userHandlers.profile);
