@@ -35,6 +35,18 @@ app.post("/get_contacts", async (req, res) => {
     } catch (error) {
       res.status(500).send(error);
     }
+});
+
+// Updating contact API
+app.put("/edit_contact", async (req, res) => {
+    const contact = await Contact.findOne({ _id: req.body });
+
+    const newContact = await contact.update(req.body);
+    try {
+      res.send(newContact);
+    } catch (error) {
+      res.status(500).send(error);
+    }
   });
 
 module.exports = app;
