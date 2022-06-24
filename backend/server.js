@@ -1,4 +1,4 @@
-'use strict';
+require("dotenv").config();
 
 var express = require('express'),
   app = express(),
@@ -17,10 +17,10 @@ const option = {
 };
 
 const mongoURI = process.env.MONGODB_URI;
-mongoose.connect('mongodb+srv://vladimirmawla:vladimirmawla@2000@vladimir-se.deqrbl1.mongodb.net/addressdb?retryWrites=true&w=majority', option).then(function(){
-    //connected successfully
+mongoose.connect('mongodb+srv://vladimir_mawla:vladimirmawla@addressdb.f0m3pnj.mongodb.net/addressdb?retryWrites=true&w=majority', option).then(function(){
+    console.log('connected successfully')
 }, function(err) {
-    //err handle
+    console.log("error")
 });
 
 app.use(bodyParser.urlencoded({ extended: true }));
