@@ -36,6 +36,7 @@
 // mongoose.model('User', UserSchema);
 
 const mongoose = require("mongoose");
+const bcrypt = require('bcrypt');
 
 const UserSchema = new mongoose.Schema({
   fullName: {
