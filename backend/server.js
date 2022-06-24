@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const Router = require("./api/routes/userRoutes")
+const userRouter = require("./api/routes/userRoutes")
+const contactRouter = require("./api/routes/contactRoutes")
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -21,7 +22,8 @@ db.once("open", function () {
   console.log("Connected successfully");
 });
 
-app.use(Router);
+app.use(userRouter);
+app.use(contactRouter);
 
 // Listening to a port
 app.listen(3000, () => {
