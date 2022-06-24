@@ -1,34 +1,10 @@
 'use strict';
-// module.exports = function(app) {
-//     var userHandlers = require('../controllers/userController');
-//     // todoList Routes
-//     app.route('/tasks')
-//         .post(userHandlers.loginRequired, userHandlers.profile);
-//     app.route('/auth/register')
-//         .post(userHandlers.register);
-//    app.route('/auth/sign_in')
-//         .post(userHandlers.sign_in);
-// };
-
-
 const express = require("express");
 const userModel = require("../models/userModel");
 var bcrypt = require('bcryptjs');
-
 const app = express();
 
-app.post("/add_user", async (request, response) => {
-    const user = new userModel(request.body);
-  
-    try {
-      await user.save();
-      response.send(user);
-    } catch (error) {
-      response.status(500).send(error);
-    }
-});
-
-
+// Register API
 app.post("/register", async (request, response) => {
 
     const user = new userModel(request.body);
@@ -42,7 +18,7 @@ app.post("/register", async (request, response) => {
       }
   });
 
-// ...
+// Get All Users API
 app.get("/users", async (request, response) => {
     const users = await userModel.find({});
   
