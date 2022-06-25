@@ -42,7 +42,7 @@ const Contacts = () => {
   return (
     <div>
       <div className="get-contacts">
-        <SearchContact setContacts={setContacts} x={contacts}/>
+        <SearchContact setContacts={setContacts} />
         {contacts.map((contact) => (
           <p key={contact._id} onClick={handleClick}>
             <span id={contact._id} onClick={() => { remove(contact._id);}}>❌</span><br/>

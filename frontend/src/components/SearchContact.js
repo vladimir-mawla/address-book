@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import Button from "./Button";
 
-const SearchContact = ({setContacts}) => {
+const SearchContact = ({setContacts, contacts}) => {
     const find_contact = document.getElementById("find-contact");
 
     function showContacts() {
@@ -23,7 +23,8 @@ const SearchContact = ({setContacts}) => {
 }
     return (
         <div className="search-contact">
-            <input id="find-contact" placeholder="Search contacts" ></input>
+            <input id="find-contact" placeholder="Search contacts" onChange={() => {searchContact();}}></input>
+
             <Button text={"Search"} className={"search-contact"} onClick={() => {searchContact();}}/>
             <Button text={"Show All"} className={"search-contact"} onClick={() => {showContacts();}}/>
         </div>
