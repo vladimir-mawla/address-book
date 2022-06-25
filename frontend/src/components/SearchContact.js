@@ -5,10 +5,6 @@ import Button from "./Button";
 const SearchContact = ({setContacts, contacts}) => {
     const find_contact = document.getElementById("find-contact");
 
-    function showContacts() {
-        window.location.reload(true)
-    }
-
     function searchContact() {
 
     axios
@@ -26,7 +22,6 @@ const SearchContact = ({setContacts, contacts}) => {
             <input id="find-contact" placeholder="Search contacts" onChange={() => {searchContact();}}></input>
 
             <Button text={"Search"} className={"search-contact"} onClick={() => {searchContact();}}/>
-            <Button text={"Show All"} className={"search-contact"} onClick={() => {showContacts();}}/>
         </div>
     )
 }
