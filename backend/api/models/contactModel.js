@@ -23,18 +23,21 @@ const ContactSchema = new mongoose.Schema({
     trim: true,
     required: true,
   },
-  long: {
-    type: Number,
-    unique: true,
-    trim: true,
-    required: true,
+  location: {
+    long: {
+        type: Number,
+        unique: true,
+        trim: true,
+        required: true,
+      },
+      lat: {
+        type: Number,
+        unique: true,
+        trim: true,
+        required: true,
+      },
   },
-  lat: {
-    type: Number,
-    unique: true,
-    trim: true,
-    required: true,
-  },
+
   userId: {
     type: String,
     trim: true,
