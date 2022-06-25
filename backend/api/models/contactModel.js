@@ -24,7 +24,12 @@ const ContactSchema = new mongoose.Schema({
     required: true,
   },
   location: {
-    type: Number
+    long: {
+      type: Number
+    },
+    lat: {
+      type: Number
+    }
   },
 
   userId: {
