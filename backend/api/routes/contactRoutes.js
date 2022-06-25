@@ -3,10 +3,12 @@ const express = require("express");
 const Contact = require("../models/contactModel");
 const app = express();
 const jwt = require("jsonwebtoken");
+const req = require("express/lib/request");
 
 // Add contact API
 app.post("/add_contact", async (request, response) => {
   const contact = new Contact(request.body);
+  const used = await Contact.findOne({_userId: req.body.userId, email: req.body.email, number: req.body.number})
 
   try {
     await contact.save();
