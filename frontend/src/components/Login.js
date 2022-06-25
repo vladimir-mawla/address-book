@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./Button";
 import { Link } from "react-router-dom";
-
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -12,6 +12,11 @@ const Login = () => {
     console.log(login_email.value);
     axios
       .post("http://localhost:3000/login", {
+        headers:{
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Request-Headers": 'Content-Type, Authorization'
+        },
         email: login_email.value,
         password: login_password.value,
       })
@@ -45,7 +50,7 @@ const Login = () => {
           }}
         />
         <p className="goto-link">
-          <Link to={"/signup"}>Create Account</Link>
+          <Link to={"/register"}>Create Account</Link>
         </p>
       </div>
     </center>

@@ -49,6 +49,17 @@ app.put("/edit_contact", async (req, res) => {
     } catch (error) {
       res.status(500).send(error);
     }
-  });
+});
+
+// Searching contacts
+app.post("/search", async (req, res) => {
+  const contacts = await Contact.find({"$or":[{fullName:req.body.fullName }, {phoneNumber:req.body.number }] });
+  
+  try {
+    res.send(contacts);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
 
 module.exports = app;
