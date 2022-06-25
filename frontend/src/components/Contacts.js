@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-
+import Button from "./Button";
 
 const axios = require("axios").default;
 
@@ -35,6 +35,12 @@ const Contacts = () => {
               Your {contact.RelationshipStatus}
           </p>
         ))}
+      </div>
+      <div className="add-contacts">
+      <strong>Full Name:</strong> <input id="contact-name"></input><br />
+      <strong>Email:</strong> <input id="contact-email"></input><br />
+      <strong>Phone Number:</strong> <input id="contact-number"></input><br />
+      <Button text={"Add"} className={"add-contact"} onClick={() => { addContact();}}/>
       </div>
     </div>
   );
