@@ -12,12 +12,14 @@ const Contacts = () => {
   const user_id = localStorage.getItem("user_id");
 
   function remove(element) {
+    console.log(element)
       axios
-        .delete("http://localhost:3000/remove_contact", {
-          _id: element,
+        .post("http://localhost:3000/remove_contact", {
+          id: element,
         })
         .then((res) => {
           console.log(res);
+          console.log(element)
         });
   }
 
