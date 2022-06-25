@@ -25,6 +25,7 @@ const Contacts = () => {
   return (
     <div>
       <div className="get-contacts">
+        <input placeholder="Search contact by name"></input>
         {contacts.map((contact) => (
           <p key={contact._id} onClick={handleClick}>
               <div id={contact._id}>❌</div>
