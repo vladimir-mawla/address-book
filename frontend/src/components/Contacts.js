@@ -18,6 +18,7 @@ const Contacts = () => {
         })
         .then((res) => {
           console.log(res);
+          window.location.reload(true);
         });
   }
 
@@ -67,7 +68,7 @@ const Contacts = () => {
               }}
             >
               ❌
-            </span>
+            </span><br />
             <strong>Name:</strong> {contact.fullName}
             <br />
             <strong>Email:</strong> {contact.email}
