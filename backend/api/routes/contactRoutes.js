@@ -53,7 +53,13 @@ app.put("/edit_contact", async (req, res) => {
 
 // Searching contacts
 app.post("/search", async (req, res) => {
-  const contacts = await Contact.find({"$or":[{fullName:req.body.fullName }, {phoneNumber:req.body.number }] });
+  const contacts = await Contact.find(
+    {
+      "$or":[
+        {fullName: {$regex:req.body.fullName }}, 
+        // {phoneNumber: JSON.parse(req.body.phoneNumber) }
+      ] 
+    });
   
   try {
     res.send(contacts);
