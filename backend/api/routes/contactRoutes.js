@@ -20,7 +20,7 @@ app.post("/add_contact", async (request, response) => {
 
 // Removing contact API
 app.delete("/remove_contact", async (req, res) => {
-  const contact = await Contact.findOne({ _id: req.body }).deleteOne();
+  const contact = await Contact.findOne({ _id: req.body._id }).deleteOne();
 
   try {
     res.send(contact);
