@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import Navbar from "./Navbar";
 import Button from "./Button";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -31,6 +31,7 @@ const Signup = () => {
 
   return (
     <center>
+      <Navbar />
       <div className="form">
         <input type="text" placeholder="Name" id="signup_name" />
         <input type="email" placeholder="Email" id="signup_email" />

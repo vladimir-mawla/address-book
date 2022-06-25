@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -12,18 +13,18 @@ const Login = () => {
     console.log(login_email.value);
     axios
       .post("http://localhost:3000/login", {
-        headers:{
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Request-Headers": 'Content-Type, Authorization'
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Request-Headers": "Content-Type, Authorization",
         },
         email: login_email.value,
         password: login_password.value,
       })
       .then((res) => {
         if (res.data["user"]) {
-            localStorage.setItem("user_id", res.data["user"]["_id"]);
-            navigate("/userpage")
+          localStorage.setItem("user_id", res.data["user"]["_id"]);
+          navigate("/userpage");
         } else {
           alert("User not Found");
           login_email.value = "";
@@ -34,6 +35,7 @@ const Login = () => {
 
   return (
     <center>
+      <Navbar />
       <div className="form">
         <input type="email" placeholder="email" id="login_email" />
         <input
