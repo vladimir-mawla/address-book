@@ -11,9 +11,9 @@ const Contacts = () => {
 
   useEffect(() => {
     axios
-      .post("http://localhost:3000/get_contacts"), {
+      .post("http://localhost:3000/get_contacts", {
           userId : user_id
-      }
+      })
 
       .then((response) => {
         const s = response.data;
@@ -24,13 +24,15 @@ const Contacts = () => {
 
   return (
     <div>
-      <ul className="contacts">
+      <div className="contacts">
         {contacts.map((contact) => (
-          <li id={contact.id} key={contact.id} onClick={handleClick}>
-              {contact.name}
-          </li>
+          <h4 id={contact._id} key={contact._id} onClick={handleClick}>
+              Name: {contact.fullName}<br />
+              Email: {contact.email}<br />
+              Number: {contact.phoneNumber}
+          </h4>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
