@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import AddContact from "./AddContact";
+import SearchContact from "./SearchContact";
 const axios = require("axios").default;
 
 const Contacts = () => {
@@ -41,7 +42,7 @@ const Contacts = () => {
   return (
     <div>
       <div className="get-contacts">
-        <input placeholder="Search contact by name"></input>
+        <SearchContact setContacts={setContacts} x={contacts}/>
         {contacts.map((contact) => (
           <p key={contact._id} onClick={handleClick}>
             <span id={contact._id} onClick={() => { remove(contact._id);}}>❌</span><br/>
