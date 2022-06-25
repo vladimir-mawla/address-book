@@ -24,13 +24,15 @@ const Contacts = () => {
 
   return (
     <div>
-      <div className="contacts">
+      <div className="get-contacts">
         {contacts.map((contact) => (
-          <h4 id={contact._id} key={contact._id} onClick={handleClick}>
-              Name: {contact.fullName}<br />
-              Email: {contact.email}<br />
-              Number: {contact.phoneNumber}
-          </h4>
+          <p key={contact._id} onClick={handleClick}>
+              <div id={contact._id}>❌</div>
+              <strong>Name:</strong> {contact.fullName}<br />
+              <strong>Email:</strong> {contact.email}<br />
+              <strong>Number:</strong> {contact.phoneNumber}<br />
+              Your {contact.RelationshipStatus}
+          </p>
         ))}
       </div>
     </div>
