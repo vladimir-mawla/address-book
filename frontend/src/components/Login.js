@@ -24,7 +24,7 @@ const Login = () => {
       .then((res) => {
         if (res.data["user"]) {
           localStorage.setItem("user_id", res.data["user"]["_id"]);
-          navigate("/userpage");
+          navigate("/page");
         } else {
           alert("User not Found");
           login_email.value = "";

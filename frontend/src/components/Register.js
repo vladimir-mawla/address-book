@@ -19,7 +19,7 @@ const Signup = () => {
       .then((res) => {
         if (res.data) {
             localStorage.getItem("user_id", res.data["_id"]);
-            navigate("/userpage");
+            navigate("/page");
         } else {
           alert("User not Found");
           signup_name.value = "";
