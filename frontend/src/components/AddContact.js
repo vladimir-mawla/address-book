@@ -4,12 +4,14 @@ import Button from "./Button";
 import axios from "axios";
 
 const AddContact = () => {
+
     function addContact() {
     const user_id = localStorage.getItem("user_id");
     const contact_name = document.getElementById("contact-name");
     const contact_email = document.getElementById("contact-email");
     const contact_number = document.getElementById("contact-number");
     const relation = document.getElementById("relation");
+
     axios
       .post("http://localhost:3000/add_contact", {
         email: contact_email.value,
@@ -36,13 +38,7 @@ const AddContact = () => {
         <br />
         <strong>Relationship:</strong> <input id="relation"></input>
         <br />
-        <Button
-          text={"Add"}
-          className={"add-contact"}
-          onClick={() => {
-            addContact();
-          }}
-        />
+        <Button text={"Add"} className={"add-contact"} onClick={() => {addContact();}}/>
       </div>
     )
 }

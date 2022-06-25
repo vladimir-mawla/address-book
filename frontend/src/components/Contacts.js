@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import AddContact from "./AddContact";
-import Button from "./Button";
-
 const axios = require("axios").default;
 
 const Contacts = () => {
+
   const handleClick = (event) => {
     localStorage.setItem("contact_id", event.currentTarget.id);
   };
+
   const [contacts, setContacts] = useState([]);
   const user_id = localStorage.getItem("user_id");
 
@@ -25,6 +25,7 @@ const Contacts = () => {
 
 
   useEffect(() => {
+
     axios
       .post("http://localhost:3000/get_contacts", {
         userId: user_id,
@@ -34,6 +35,7 @@ const Contacts = () => {
         const s = response.data;
         setContacts(s);
       });
+
   }, []);
 
   return (
@@ -42,20 +44,13 @@ const Contacts = () => {
         <input placeholder="Search contact by name"></input>
         {contacts.map((contact) => (
           <p key={contact._id} onClick={handleClick}>
-            <span
-              id={contact._id}
-              onClick={() => {
-                remove(contact._id);
-              }}
-            >
-              ❌
-            </span><br />
+            <span id={contact._id} onClick={() => { remove(contact._id);}}>❌</span><br/>
             <strong>Name:</strong> {contact.fullName}
-            <br />
+            <br/>
             <strong>Email:</strong> {contact.email}
-            <br />
+            <br/>
             <strong>Number:</strong> {contact.phoneNumber}
-            <br />
+            <br/>
             Your {contact.RelationshipStatus}
           </p>
         ))}
