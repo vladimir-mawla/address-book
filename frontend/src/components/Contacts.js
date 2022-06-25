@@ -36,6 +36,7 @@ const Contacts = () => {
         RelationshipStatus: relation.value,
       })
       .then((res) => {
+        window.location.reload(true);
         contact_email.value = "";
         contact_name.value = "";
         contact_number.value = "";
