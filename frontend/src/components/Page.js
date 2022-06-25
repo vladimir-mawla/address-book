@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 
-const UserPage = () => {
+const Page = () => {
     return (
         <div>
             <Navbar />
@@ -9,4 +9,4 @@ const UserPage = () => {
     )
 }
 
-export default UserPage;
+export default Page;
