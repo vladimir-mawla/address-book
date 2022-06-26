@@ -35,7 +35,7 @@ const App = () => {
   <MapPicker defaultLocation={defaultLocation}
     zoom={zoom}
     mapTypeId="roadmap"
-    style={{height:'700px'}}
+    style={{height:'300px', width:'350px'}}
     onChangeLocation={handleChangeLocation} 
     onChangeZoom={handleChangeZoom}
     apiKey='AIzaSyBnAOfaeDIrUzSanaPjpTgHSGbl3BG2cN0'/>
