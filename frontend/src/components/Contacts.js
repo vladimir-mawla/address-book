@@ -51,7 +51,7 @@ const Contacts = () => {
             <br/>
             <strong>Email:</strong> {contact.email}
             <br/>
-            <strong>Number:</strong> {contact.phoneNumber}
+            <strong>Number:</strong> {contact.phoneNumber}<br />
             <div><ContactLocation id={contact._id} name={contact.fullName} /></div>
             <br/>
             Your {contact.RelationshipStatus}

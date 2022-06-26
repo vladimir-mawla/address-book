@@ -1,8 +1,6 @@
-import MapPicker from "react-google-map-picker";
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
 import React, { useEffect } from "react";
 import { useState } from "react";
-// import MapView from "react-native-maps";
 
 const axios = require("axios").default;
 
@@ -18,15 +16,11 @@ const ContactLocation = ({ id, name }) => {
       .then((res) => {
         setLocation(res.data);
       });
-  }, [1]);
+  }, []);
 
   return (
+      <div>
     <div className="get-contact-location">
-      {/* <MapView
-            region={location}
-            showsUserLocation={true}
-        >
-        </MapView> */}
       <Map
         google={window.google}
         style={{ width: "200px", height: "200px" }}
@@ -35,10 +29,11 @@ const ContactLocation = ({ id, name }) => {
       >
         <Marker
           name={name}
-          position={{lat:2, lng:3}}
+          position={location}
         />
         <Marker />
       </Map>
+    </div>
     </div>
   );
 };
