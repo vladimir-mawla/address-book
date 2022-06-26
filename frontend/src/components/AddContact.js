@@ -1,8 +1,8 @@
 import React from "react";
 import Button from "./Button";
 import axios from "axios";
-import Map from "./AddLocation"
-const AddContact = () => {
+
+const AddContact = ({location}) => {
 
     function addContact() {
     const user_id = localStorage.getItem("user_id");
@@ -18,6 +18,7 @@ const AddContact = () => {
         userId: user_id,
         phoneNumber: contact_number.value,
         RelationshipStatus: relation.value,
+        location
       })
       .then((res) => {
         window.location.reload(true);
@@ -36,8 +37,6 @@ const AddContact = () => {
         <strong>Phone Number:</strong> <input id="contact-number"></input>
         <br />
         <strong>Relationship:</strong> <input id="relation"></input>
-        <br />
-        <Map />
         <br />
         <Button text={"Add"} className={"add-contact"} onClick={() => {addContact();}}/>
       </div>

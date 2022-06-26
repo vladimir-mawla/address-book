@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import AddContact from "./AddContact";
+import AddLocation from "./AddLocation";
 import SearchContact from "./SearchContact";
 const axios = require("axios").default;
 
@@ -56,7 +57,7 @@ const Contacts = () => {
           </p>
         ))}
       </div>
-      <AddContact />
+      <AddLocation />
     </div>
   );
 };
