@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import AddContact from "./AddContact";
+import ContactLocation from "./ContactLocation";
 import AddLocation from "./AddLocation";
 import SearchContact from "./SearchContact";
 const axios = require("axios").default;
@@ -52,6 +52,7 @@ const Contacts = () => {
             <strong>Email:</strong> {contact.email}
             <br/>
             <strong>Number:</strong> {contact.phoneNumber}
+            <ContactLocation id={contact._id}/>
             <br/>
             Your {contact.RelationshipStatus}
           </p>
