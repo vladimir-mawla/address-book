@@ -30,17 +30,17 @@ const AddLocation = () => {
     <div className='add-contact'>
         <AddContact location={location}/>
         <div className='add-location'>
-        <label>Latitute:</label><input type='text' id="lat" value={location.lat} disabled/>
-        <label>Longitute:</label><input type='text' id="lng" value={location.lng} disabled/>
-        
-        <MapPicker defaultLocation={defaultLocation}
-            zoom={zoom}
-            mapTypeId="roadmap"
-            style={{height:'300px', width:'350px'}}
-            onChangeLocation={handleChangeLocation} 
-            onChangeZoom={handleChangeZoom}
-            apiKey='AIzaSyA-OElgILgvZytsZLl-jL-7FHRN8FKZQvs'/>
-            </div>
+          <label>Latitute:</label><input type='text' id="lat" value={location.lat} disabled/>
+          <label>Longitute:</label><input type='text' id="lng" value={location.lng} disabled/>
+          
+          <MapPicker defaultLocation={defaultLocation}
+              zoom={zoom}
+              mapTypeId="roadmap"
+              style={{height:'300px', width:'350px'}}
+              onChangeLocation={handleChangeLocation} 
+              onChangeZoom={handleChangeZoom}
+              apiKey='AIzaSyA-OElgILgvZytsZLl-jL-7FHRN8FKZQvs'/>
+          </div>
   </div>
   );
 }
