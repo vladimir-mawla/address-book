@@ -68,4 +68,14 @@ app.post("/search", async (req, res) => {
   }
 });
 
+// Get contact location API
+app.post("/get_contact_location", async (req, res) => {
+  const contact = await Contact.find({ _id: req.body.contact_id });
+  try {
+    res.send(contact[0]['location']);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
 module.exports = app;
