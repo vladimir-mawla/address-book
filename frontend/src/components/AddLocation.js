@@ -28,8 +28,8 @@ const App = () => {
   return (
     <>
   <button onClick={handleResetLocation}>Reset Location</button>
-  <label>Latitute:</label><input type='text' value={location.lat} disabled/>
-  <label>Longitute:</label><input type='text' value={location.lng} disabled/>
+  <label>Latitute:</label><input type='text' id="lat" value={location.lat} disabled/>
+  <label>Longitute:</label><input type='text' id="lng" value={location.lng} disabled/>
   <label>Zoom:</label><input type='text' value={zoom} disabled/>
   
   <MapPicker defaultLocation={defaultLocation}
@@ -38,7 +38,7 @@ const App = () => {
     style={{height:'300px', width:'350px'}}
     onChangeLocation={handleChangeLocation} 
     onChangeZoom={handleChangeZoom}
-    apiKey='AIzaSyBnAOfaeDIrUzSanaPjpTgHSGbl3BG2cN0'/>
+    apiKey='AIzaSyA-OElgILgvZytsZLl-jL-7FHRN8FKZQvs'/>
   </>
   );
 }
