@@ -7,7 +7,7 @@ const DefaultLocation = { lat: 33.8547, lng: 35.8623};
 const DefaultZoom = 10;
 
 const AddLocation = () => {
-    
+
   const [defaultLocation, setDefaultLocation] = useState(DefaultLocation);
 
   const [location, setLocation] = useState(defaultLocation);
@@ -32,7 +32,6 @@ const AddLocation = () => {
         <button onClick={handleResetLocation}>Reset Location</button>
         <label>Latitute:</label><input type='text' id="lat" value={location.lat} disabled/>
         <label>Longitute:</label><input type='text' id="lng" value={location.lng} disabled/>
-        <label>Zoom:</label><input type='text' value={zoom} disabled/>
         
         <MapPicker defaultLocation={defaultLocation}
             zoom={zoom}
