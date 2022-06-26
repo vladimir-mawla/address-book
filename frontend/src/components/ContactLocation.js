@@ -1,11 +1,10 @@
-import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
+import {Map, Marker} from 'google-maps-react';
 import React, { useEffect } from "react";
 import { useState } from "react";
-
 const axios = require("axios").default;
 
 const ContactLocation = ({ id, name }) => {
-  const [location, setLocation] = useState([]);
+  const [location, setLocation] = useState({});
 
   useEffect(() => {
     axios
@@ -16,25 +15,21 @@ const ContactLocation = ({ id, name }) => {
       .then((res) => {
         setLocation(res.data);
       });
-  }, []);
+      
+  }, [id]);
 
   return (
-      <div>
     <div className="get-contact-location">
       <Map
         google={window.google}
         style={{ width: "200px", height: "200px" }}
         className={"map"}
-        zoom={14}
-      >
-        <Marker
-          name={name}
-          position={location}
-        />
-        <Marker />
+        zoom={14}>
+
+        <Marker name={name} position={location} /><Marker />
       </Map>
     </div>
-    </div>
+
   );
 };
 
