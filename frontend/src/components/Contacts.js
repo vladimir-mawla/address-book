@@ -38,7 +38,7 @@ const Contacts = () => {
         setContacts(s);
       });
 
-  }, []);
+  }, [user_id]);
 
   return (
     <div>
