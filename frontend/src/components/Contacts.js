@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import AddContact from "./AddContact";
 import SearchContact from "./SearchContact";
-import Map from "./AddLocation"
 const axios = require("axios").default;
 
 const Contacts = () => {
@@ -58,7 +57,6 @@ const Contacts = () => {
         ))}
       </div>
       <AddContact />
-      <Map />
     </div>
   );
 };

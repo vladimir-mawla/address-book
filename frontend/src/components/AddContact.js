@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React from "react";
 import Button from "./Button";
 import axios from "axios";
-
+import Map from "./AddLocation"
 const AddContact = () => {
 
     function addContact() {
@@ -37,6 +36,8 @@ const AddContact = () => {
         <strong>Phone Number:</strong> <input id="contact-number"></input>
         <br />
         <strong>Relationship:</strong> <input id="relation"></input>
+        <br />
+        <Map />
         <br />
         <Button text={"Add"} className={"add-contact"} onClick={() => {addContact();}}/>
       </div>
