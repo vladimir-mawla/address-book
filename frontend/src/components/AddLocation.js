@@ -21,11 +21,6 @@ const AddLocation = () => {
     setZoom(newZoom);
   }
 
-  function handleResetLocation(){
-    setDefaultLocation({ ... DefaultLocation});
-    setZoom(DefaultZoom);
-  }
-
   return (
     <div className='add-contact'>
         <AddContact location={location}/>
