@@ -7,8 +7,7 @@ const DefaultLocation = { lat: 33.8547, lng: 35.8623};
 const DefaultZoom = 10;
 
 const AddLocation = () => {
-  const l_lat = document.getElementById("lat")
-  const l_lng = document.getElementById("lng")
+    
   const [defaultLocation, setDefaultLocation] = useState(DefaultLocation);
 
   const [location, setLocation] = useState(defaultLocation);
