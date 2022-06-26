@@ -19,8 +19,6 @@ const SearchContact = ({setContacts, contacts}) => {
     return (
         <div className="search-contact">
             <input id="find-contact" placeholder="Search contacts" onChange={() => {searchContact();}}></input>
-
-            <Button text={"Search"} className={"search-contact"} onClick={() => {searchContact();}}/>
         </div>
     )
 }
