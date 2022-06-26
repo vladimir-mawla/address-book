@@ -27,8 +27,9 @@ const AddLocation = () => {
   }
 
   return (
-    <div>
+    <div className='add-contact'>
         <AddContact location={location}/>
+        <div className='add-location'>
         <button onClick={handleResetLocation}>Reset Location</button>
         <label>Latitute:</label><input type='text' id="lat" value={location.lat} disabled/>
         <label>Longitute:</label><input type='text' id="lng" value={location.lng} disabled/>
@@ -40,6 +41,7 @@ const AddLocation = () => {
             onChangeLocation={handleChangeLocation} 
             onChangeZoom={handleChangeZoom}
             apiKey='AIzaSyA-OElgILgvZytsZLl-jL-7FHRN8FKZQvs'/>
+            </div>
   </div>
   );
 }

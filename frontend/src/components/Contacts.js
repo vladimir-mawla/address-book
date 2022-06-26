@@ -41,20 +41,22 @@ const Contacts = () => {
   }, [user_id]);
 
   return (
-    <div>
+    <div className="container">
       <div className="get-contacts">
         <SearchContact setContacts={setContacts} />
         {contacts.map((contact) => (
-          <div key={contact._id} onClick={handleClick}>
+          <div className="contact" key={contact._id} onClick={handleClick}>
             <span id={contact._id} onClick={() => { remove(contact._id);}}>❌</span><br/>
             <strong>Name:</strong> {contact.fullName}
             <br/>
             <strong>Email:</strong> {contact.email}
             <br/>
-            <strong>Number:</strong> {contact.phoneNumber}<br />
-            <div><ContactLocation id={contact._id} name={contact.fullName} /></div>
-            <br/>
+            <strong>Number:</strong> {contact.phoneNumber}
+            <br />
             Your {contact.RelationshipStatus}
+            <div className="contact-location"><ContactLocation id={contact._id} name={contact.fullName} /></div>
+            <br/>
+            
           </div>
         ))}
       </div>

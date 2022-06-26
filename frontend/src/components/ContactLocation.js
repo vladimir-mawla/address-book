@@ -26,12 +26,12 @@ const ContactLocation = ({ id, name }) => {
         google={window.google}
         style={{ width: "200px", height: "200px" }}
         className={"map"}
-        zoom={14}>
+        zoom={8}>
 
-        <Marker name={name} position={location} /><Marker />
+        <Marker name={name} position={{lat:location["lat"], lng:location["lng"]}} /><Marker />
       </Map> */}
       <Wrapper apiKey={"AIzaSyA-OElgILgvZytsZLl-jL-7FHRN8FKZQvs"}>
-        <Map center={location} google={window.google} zoom={10} style={{ width: "200px", height: "200px" }}>
+        <Map className="wrapper" center={location} google={window.google} zoom={10} style={{ width: "200px", height: "200px"}}>
           <Marker position={location} />
         </Map>
       </Wrapper>
