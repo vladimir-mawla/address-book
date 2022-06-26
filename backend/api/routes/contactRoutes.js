@@ -31,7 +31,7 @@ app.post("/remove_contact", async (req, res) => {
 
 // Get contacts API
 app.post("/get_contacts", async (req, res) => {
-    const contact = await Contact.find({ _userId: req.body });
+    const contact = await Contact.find({ userId: req.body.user_id });
     try {
       res.send(contact);
     } catch (error) {

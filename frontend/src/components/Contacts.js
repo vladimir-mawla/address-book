@@ -30,7 +30,7 @@ const Contacts = () => {
 
     axios
       .post("http://localhost:3000/get_contacts", {
-        userId: user_id,
+        user_id: user_id,
       })
 
       .then((response) => {
