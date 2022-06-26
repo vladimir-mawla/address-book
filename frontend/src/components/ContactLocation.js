@@ -31,7 +31,7 @@ const ContactLocation = ({ id, name }) => {
         <Marker name={name} position={{lat:location["lat"], lng:location["lng"]}} /><Marker />
       </Map> */}
       <Wrapper apiKey={"AIzaSyA-OElgILgvZytsZLl-jL-7FHRN8FKZQvs"}>
-        <Map className="wrapper" center={location} google={window.google} zoom={10} style={{ width: "200px", height: "200px"}}>
+        <Map className="wrapper" center={location} google={window.google} zoom={10} style={{ width: "250px", height: "250px"}}>
           <Marker position={location} />
         </Map>
       </Wrapper>
