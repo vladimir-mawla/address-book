@@ -56,7 +56,7 @@ app.post("/search", async (req, res) => {
   const contacts = await Contact.find(
     {
       "$or":[
-        {fullName: {$regex:req.body.fullName }}, 
+        {fullName: {$regex:req.body.fullName}, userId:req.body.user_id }, 
         // {phoneNumber: JSON.parse(req.body.phoneNumber) }
       ] 
     });
