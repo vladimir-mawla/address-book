@@ -17,7 +17,7 @@ const ContactLocation = ({ id, name }) => {
       .then((res) => {
         setLocation(res.data);
       });
-    console.log("hello");
+      
   }, []);
 
   return (

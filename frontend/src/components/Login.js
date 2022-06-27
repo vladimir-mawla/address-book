@@ -21,10 +21,8 @@ const Login = () => {
         password: login_password.value,
       })
       .then((res) => {
-        console.log(res.data)
         if(res.data["message"]){
           alert("User not Found");
-          login_email.value = "";
           login_password.value = "";
         }else if (res.data["user"]) {
           localStorage.setItem("user_id", res.data["user"]["_id"]);

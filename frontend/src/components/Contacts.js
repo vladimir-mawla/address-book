@@ -20,7 +20,6 @@ const Contacts = () => {
           id: element,
         })
         .then((res) => {
-          console.log(res);
           window.location.reload(true);
         });
   }

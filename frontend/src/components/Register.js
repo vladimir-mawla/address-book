@@ -17,7 +17,7 @@ const Signup = () => {
         password: signup_password.value,
     })
       .then((res) => {
-        if (res.data) {
+        if (res.data["fullName"]) {
             localStorage.getItem("user_id", res.data["_id"]);
             navigate("/page");
         } else {
