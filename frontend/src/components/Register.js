@@ -20,10 +20,11 @@ const Signup = () => {
         if (res.data["fullName"]) {
             localStorage.getItem("user_id", res.data["_id"]);
             navigate("/page");
-        } else {
-          alert("User not Found");
-          signup_name.value = "";
-          signup_email.value = "";
+        } else if(res.data === "Fill All Fields") {
+          alert("Fields cannot be empty");
+          signup_password.value = "";
+        }else if(res.data === "Too Short") {
+          alert("Password Too Short");
           signup_password.value = "";
         }
       });

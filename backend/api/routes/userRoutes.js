@@ -10,12 +10,16 @@ const jwt = require('jsonwebtoken');
 app.post("/register", async (request, response) => {
   const user = new userModel(request.body);
   user.hash_password = bcrypt.hashSync(request.body.password, 10);
-
+  if (request.body.password === "" || request.body.fullName === "" || request.body.email === ""){
+    response.send("Fill All Fields")
+  } else if(request.body.password.length < 6){
+    response.send("Too Short")
+  }
   try {
     await user.save();
     response.send(user);
   } catch (error) {
-    response.status(500).send(error);
+    response.status(500);
   }
 });
 
