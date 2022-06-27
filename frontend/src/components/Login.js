@@ -10,7 +10,6 @@ const Login = () => {
   function login() {
     const login_email = document.getElementById("login_email");
     const login_password = document.getElementById("login_password");
-    console.log(login_email.value);
     axios
       .post("http://localhost:3000/login", {
         headers: {
@@ -22,14 +21,15 @@ const Login = () => {
         password: login_password.value,
       })
       .then((res) => {
-        if (res.data["user"]) {
-          localStorage.setItem("user_id", res.data["user"]["_id"]);
-          navigate("/page");
-        } else {
+        console.log(res.data)
+        if(res.data["message"]){
           alert("User not Found");
           login_email.value = "";
           login_password.value = "";
-        }
+        }else if (res.data["user"]) {
+          localStorage.setItem("user_id", res.data["user"]["_id"]);
+          navigate("/page");
+        } 
       });
   }
 
