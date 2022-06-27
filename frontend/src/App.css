@@ -38,7 +38,7 @@
 }
 .get-contact-location{
   display: flex;
-  width: 250px;
+  width: 350px;
   height: 250px;
 }
 .wrapper{
@@ -52,10 +52,16 @@
   width: 200px;
 }
 .contact{
-  width: 200px;
+  width: 280px;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
 }
 .get-contacts{
   width: 400px;
+}
+.get-contacts div{
+  margin: 4px;
 }
 .add-location{
   display: flex;
@@ -66,14 +72,29 @@
 }
 .add-location input {
   width: 140px;
+  border: 1.5px solid rgb(175, 175, 175);
+  border-radius: 10px;
 }
 
 .input{
   display: flex;
   justify-content: space-between;
 }
+.add-contact{
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  height: 50%;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
 .add-contacts{
-  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
 }
 .add-contacts button{
   width: 100%;

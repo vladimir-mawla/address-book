@@ -30,13 +30,13 @@ const AddContact = ({location}) => {
     }
     return (
       <div className="add-contacts">
-        <div className="input"><strong>Full Name:</strong> <input id="contact-name"></input></div>
+        <div className="input"><strong>Full Name:</strong></div><div> <input id="contact-name"></input></div>
         <br />
-        <div className="input"><strong>Email:</strong> <input id="contact-email"></input></div>
+        <div className="input"><strong>Email:</strong></div><div> <input id="contact-email"></input></div>
         <br />
-        <div className="input"><strong>Phone Number:</strong> <input id="contact-number"></input></div>
+        <div className="input"><strong>Phone Number:</strong></div><div> <input id="contact-number"></input></div>
         <br />
-        <div className="input"><strong>Relationship:</strong> <input id="relation"></input></div>
+        <div className="input"><strong>Relationship:</strong></div><div> <input id="relation"></input></div>
         <br />
         <div className="input"><Button text={"Add"} className={"add-contact"} onClick={() => {addContact();}}/></div>
       </div>
