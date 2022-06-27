@@ -107,6 +107,9 @@
 .add-contacts button{
   width: 100%;
   padding: 10px;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
 }
 .container{
   display: flex;
